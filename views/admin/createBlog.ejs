@@ -1,0 +1,22 @@
+
+<%- include('../layouts/adminHeader') %>
+<h1>Admin Create Blogs Page</h1>
+<a href="/admin/blogs/new">Create Blog</a>
+<form action="/admin/blogs" method="POST" enctype="multipart/form-data">
+    <label>Title</label>
+    <input type="text" name="title">
+    <label>Description</label>
+    <textarea type="text" name="description" maxlength="500" minlength="50"></textarea>
+    <label>Content</label>
+    <textarea type="text" name="content" maxlength="5000" minlength="50"></textarea>
+    
+    <label>Cover Image</label>
+    <input type="file" name="cover">
+    
+    
+    <button type="submit">Submit</button>
+</form>
+
+
+
+<%- include('../layouts/adminFooter') %>

@@ -1,0 +1,14 @@
+
+<%- include('../layouts/adminHeader') %>
+<h1>Edit Blog Page</h1>
+<form action="/admin/blogs/edit/<%= blog.id %>?_method=PUT" method="POST">
+    <label>Title</label>
+    <input type="text" name="title">
+    <label>Description</label>
+    <input type="text" name="description">
+    <button type="submit">Submit</button>
+</form>
+
+
+
+<%- include('../layouts/adminFooter') %>

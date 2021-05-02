@@ -1,0 +1,29 @@
+
+<%- include('../layouts/adminHeader') %>
+<h1>Admin All Blogs Page</h1>
+<a href="/admin/blogs/new">Create Blog</a>
+
+    <% blogs.forEach(blog => { %>
+        <div class="allBlogWrapper">
+            <div class="allBlogLeftSide">
+                <img src="<%= blog.coverImagePath %>">
+            </div>
+            <div class="allBlogRightSide">
+                <div class="allBlogTxtWrap">
+                    <h2><%= blog.title %></h2>
+                    <p><%= blog.description %></p>
+                    <small><%= blog.publishDate.toLocaleDateString() %></small>
+                </div>
+                <div class="allBlogBtnWrap">
+                    <a class="btn btn-blue" href="/admin/blogs/<%= blog.id %>">Go to Blog Page</a>
+                    <a class="btn btn-green" href="/admin/blogs/edit/<%= blog.id %>">Edit</a>
+                    <form action="/admin/blogs/<%= blog.id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-red" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+
+
+<%- include('../layouts/adminFooter') %>
